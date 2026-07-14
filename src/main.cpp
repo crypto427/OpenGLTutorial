@@ -22,26 +22,57 @@ const unsigned int width = 800;
 const unsigned int height = 800;
 
 
-// Vertices coordinates
 GLfloat vertices[] =
-{ //     COORDINATES     /        COLORS      /   TexCoord  //
-    -0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
-    -0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
-     0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
-     0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
-     0.0f, 0.8f,  0.0f,     0.92f, 0.86f, 0.76f,    2.5f, 5.0f
+{
+    //   COORDINATES    /        COLORS       /   TexCoord
+    // Front Face (Vertices 0, 3, 7, 4 in your original setup)
+    -0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f, // Bottom-Left
+     0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f, // Bottom-Right
+     0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f, // Top-Right
+    -0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f, // Top-Left
+
+    // Back Face
+    -0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f, 
+     0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f, 
+     0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f, 
+    -0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f, 
+
+    // Left Face
+    -0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
+    -0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
+    -0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f,
+    -0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f,
+
+    // Right Face
+     0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
+     0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
+     0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f,
+     0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f,
+
+    // Top Face
+    -0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
+     0.5f, 0.2f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
+     0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f,
+    -0.5f, 0.2f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f,
+
+    // Bottom Face
+    -0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 0.0f,
+     0.5f, 0.0f, -0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 0.0f,
+     0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    5.0f, 5.0f,
+    -0.5f, 0.0f,  0.5f,     0.83f, 0.70f, 0.44f,    0.0f, 5.0f
 };
 
-// Indices for vertices order
+// Updated Indices matching the 24 clean vertex breakdown
 GLuint indices[] =
 {
-    0, 1, 2,
-    0, 2, 3,
-    0, 1, 4,
-    1, 2, 4,
-    2, 3, 4,
-    3, 0, 4
+    0, 1, 2,    0, 2, 3,    // Front
+    4, 5, 6,    4, 6, 7,    // Back
+    8, 9, 10,   8, 10, 11,  // Left
+    12, 13, 14, 12, 14, 15, // Right
+    //16, 17, 18, 16, 18, 19, // Top
+    20, 21, 22, 20, 22, 23  // Bottom
 };
+
 
 
 
