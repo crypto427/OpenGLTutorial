@@ -69,7 +69,7 @@ GLuint indices[] =
     4, 5, 6,    4, 6, 7,    // Back
     8, 9, 10,   8, 10, 11,  // Left
     12, 13, 14, 12, 14, 15, // Right
-    //16, 17, 18, 16, 18, 19, // Top
+    16, 17, 18, 16, 18, 19, // Top
     20, 21, 22, 20, 22, 23  // Bottom
 };
 
@@ -90,7 +90,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // Create a GLFWwindow object of 800 by 800 pixels, naming it "YoutubeOpenGL"
-    GLFWwindow* window = glfwCreateWindow(width, height, "YoutubeOpenGL", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(width, height, "Intro to 3D", NULL, NULL);
     // Error check if the window fails to create
     if (window == NULL)
     {
